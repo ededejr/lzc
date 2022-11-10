@@ -65,7 +65,7 @@
     "hooks": {
       "before:init": [
         "npm run test",
-        "npm run build:candidate"
+        "npm run build"
       ],
       "after:git:release": "npm run copy:meta",
       "after:release": "npm publish ./build"
