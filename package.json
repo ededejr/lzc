@@ -1,6 +1,6 @@
 {
   "name": "@ededejr/lzc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a string compression wrapper around lz-string",
   "main": "index.js",
   "scripts": {
