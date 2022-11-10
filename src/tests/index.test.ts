@@ -1,22 +1,22 @@
-import LZC from '../';
+import lzc from '../';
 import {
   Base64Compressor,
   URICompressor,
   Utf16Compressor,
 } from '../compressors';
 
-describe('LZC', () => {
+describe('lzc', () => {
   test('should be defined', () => {
-    expect(LZC).toBeDefined();
+    expect(lzc).toBeDefined();
   });
 
   test('contains a create method', () => {
-    expect(LZC.create).toBeDefined();
-    expect(typeof LZC.create).toBe('function');
+    expect(lzc).toBeDefined();
+    expect(typeof lzc).toBe('function');
   });
 
   test('create method should return a compressor', () => {
-    const compressor = LZC.create('base64');
+    const compressor = lzc('base64');
     expect(compressor).toBeDefined();
     expect(compressor.compress).toBeDefined();
     expect(compressor.decompress).toBeDefined();
@@ -28,13 +28,13 @@ describe('LZC', () => {
     expect(() => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore - testing incompatible type
-      LZC.create('unknown');
+      lzc('unknown');
     }).toThrow();
   });
 
   test('creates correct compressor type', () => {
-    expect(LZC.create('base64')).toBeInstanceOf(Base64Compressor);
-    expect(LZC.create('utf16')).toBeInstanceOf(Utf16Compressor);
-    expect(LZC.create('uri')).toBeInstanceOf(URICompressor);
+    expect(lzc('base64')).toBeInstanceOf(Base64Compressor);
+    expect(lzc('utf16')).toBeInstanceOf(Utf16Compressor);
+    expect(lzc('uri')).toBeInstanceOf(URICompressor);
   });
 });

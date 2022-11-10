@@ -5,9 +5,9 @@ a simple wrapper around [lz-string](https://www.npmjs.com/package/lz-string) for
 ### usage
 
 ```ts
-import LZC from '@ededejr/lzc';
+import lzc from '@ededejr/lzc';
 
-const compressor = LZC.create('base64');
+const compressor = lzc('base64');
 
 const input = 'a very long string';
 const compressed = compressor.compress(input);
